@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Senda Pa — Un puzzle isométrico para ir sin prisa</title>
+  <meta name="description" content="Senda Pa es un puzzle isométrico para Android. 48 niveles, 24 amigos, granja, gorros y duelo Wi-Fi local. Sin anuncios, energía ni temporizadores.">
+  <meta name="theme-color" content="#f6efdf">
+  <meta name="color-scheme" content="light">
+  <script>document.documentElement.classList.add("js");</script>
+
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/icon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <link rel="preload" href="assets/fonts/Fredoka.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/Nunito-400.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Senda Pa">
+  <meta property="og:title" content="Senda Pa — El pueblito de los animalitos">
+  <meta property="og:description" content="Un puzzle isométrico para ir sin prisa. 48 niveles, 24 amigos, granja y duelo Wi-Fi local. Sin anuncios, energía ni temporizadores.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Senda Pa — El pueblito de los animalitos">
+  <meta name="twitter:description" content="Un puzzle isométrico para ir sin prisa. 48 niveles, 24 amigos, granja y duelo Wi-Fi local.">
+  <meta name="twitter:image" content="assets/og-image.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Senda Pa",
+    "description": "Puzzle isométrico para Android con 48 niveles, 24 mascotas, granja, gorros y duelo Wi-Fi local.",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Android",
+    "gamePlatform": "Android",
+    "genre": "Puzzle",
+    "inLanguage": "es",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <svg class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-paw" viewBox="0 0 24 24">
+      <ellipse cx="6.2" cy="8.1" rx="2.2" ry="2.8" transform="rotate(-22 6.2 8.1)"/>
+      <ellipse cx="10.1" cy="5.5" rx="2.2" ry="2.8" transform="rotate(-8 10.1 5.5)"/>
+      <ellipse cx="14.2" cy="5.6" rx="2.2" ry="2.8" transform="rotate(9 14.2 5.6)"/>
+      <ellipse cx="18" cy="8.5" rx="2.2" ry="2.8" transform="rotate(23 18 8.5)"/>
+      <path d="M7.3 15.5c0-2.8 2.2-4.5 4.8-4.5s4.8 1.7 4.8 4.5c0 2.3-1.8 3.7-4.8 3.7s-4.8-1.4-4.8-3.7Z"/>
+    </symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24">
+      <path d="M4 12h15M13 6l6 6-6 6"/>
+    </symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24">
+      <path d="M20 12H5M11 18l-6-6 6-6"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="m4.5 12.5 4.5 4.5L19.5 6.5"/>
+    </symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24">
+      <path d="M3.5 9.2a13.4 13.4 0 0 1 17 0M6.5 12.4a9 9 0 0 1 11 0M9.5 15.6a4.7 4.7 0 0 1 5 0"/>
+      <circle cx="12" cy="19" r="1.2" class="fill"/>
+    </symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24">
+      <path d="M12 3.5c.7 4.7 3.8 7.8 8.5 8.5-4.7.7-7.8 3.8-8.5 8.5-.7-4.7-3.8-7.8-8.5-8.5 4.7-.7 7.8-3.8 8.5-8.5Z"/>
+    </symbol>
+    <symbol id="i-home" viewBox="0 0 24 24">
+      <path d="m3.5 10.5 8.5-7 8.5 7M5.5 9.5v10h13v-10M9.5 19.5v-5h5v5"/>
+    </symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24">
+      <path d="M3.5 9.5h17v10h-17zM2.5 7.5h19v4h-19zM12 7.5v12"/>
+      <path d="M12 7.5H8.2A2.2 2.2 0 1 1 10.4 5c1.1 1 1.6 2.5 1.6 2.5ZM12 7.5h3.8A2.2 2.2 0 1 0 13.6 5c-1.1 1-1.6 2.5-1.6 2.5Z"/>
+    </symbol>
+    <symbol id="i-hat" viewBox="0 0 24 24">
+      <path d="M8.5 10.5 9.8 3h4.4l1.3 7.5M6 10.5h12l1 3H5zM8 13.5h8V20H8z"/>
+    </symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24">
+      <path d="M5 19c8.5 0 14-5.2 14-14-8.8 0-14 5.2-14 14ZM5 19c1.8-4.3 5.2-7.7 9.5-9.5"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="m6 6 12 12M18 6 6 18"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="Senda Pa, inicio">
+        <img src="assets/icon.png" width="40" height="40" alt="">
+        <span class="brand-word">Senda <em>Pa</em></span>
+      </a>
+      <nav class="main-nav" aria-label="Principal">
+        <a href="#juego">El juego</a>
+        <a href="#capturas">Capturas</a>
+        <a href="#pueblito">El pueblito</a>
+        <a href="privacidad/">Privacidad</a>
+      </nav>
+      <a class="header-pill" href="#disponible"><span class="status-dot" aria-hidden="true"></span> Muy pronto</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow">
+          <span class="eyebrow-mark" aria-hidden="true"><svg class="icon icon--fill"><use href="#i-paw"/></svg></span>
+          Un puzzle isométrico para ir sin prisa
+        </p>
+        <h1 id="hero-title">Senda <span>Pa</span></h1>
+        <p class="hero-tagline">El pueblito de los animalitos.</p>
+        <p class="hero-lede">Traza un camino con piezas, pulsa <strong>IR</strong> y mira a tu mascota pasear hasta su casita. 48 niveles, 24 amigos y una granja que crece contigo.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="#juego">Conoce el juego <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          <a class="btn btn--ghost" href="#capturas">Ver capturas</a>
+        </div>
+        <ul class="hero-facts" aria-label="Lo esencial">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Gratis</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Sin anuncios</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Sin prisa</li>
+        </ul>
+      </div>
+
+      <div class="hero-art" data-reveal style="--delay: .12s">
+        <div class="sun-disc" aria-hidden="true"></div>
+        <div class="leaf leaf--one" aria-hidden="true"></div>
+        <div class="leaf leaf--two" aria-hidden="true"></div>
+        <div class="phone phone--hero">
+          <div class="phone-screen">
+            <img src="assets/screens/inicio.webp" width="760" height="1689" alt="Pantalla de inicio de Senda Pa con el gato, el regalo diario y los accesos a mundos, mascotas, granja y misiones." fetchpriority="high">
+          </div>
+        </div>
+        <div class="sticker sticker--levels" aria-hidden="true">
+          <span class="sticker-num">48</span>
+          <span>niveles<br>de paseo</span>
+        </div>
+        <div class="sticker sticker--friends" aria-hidden="true">
+          <svg class="icon icon--fill"><use href="#i-paw"/></svg>
+          <span><strong>24</strong> amigos</span>
+        </div>
+        <svg class="hero-trail" viewBox="0 0 520 360" fill="none" aria-hidden="true">
+          <path d="M-20 310C78 310 112 226 190 230c74 4 84 102 172 76 84-25 92-132 178-146" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 14"/>
+        </svg>
+      </div>
+    </section>
+
+    <div class="trail-divider container" aria-hidden="true">
+      <svg viewBox="0 0 1200 74" preserveAspectRatio="none">
+        <path d="M0 46C142 46 176 12 324 26c144 14 208 42 354 26 156-17 216-38 342-16 72 13 130 12 180 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 13"/>
+      </svg>
+    </div>
+
+    <section id="juego" class="section container story" aria-labelledby="story-title">
+      <div class="section-head" data-reveal>
+        <p class="kicker"><span class="kicker-num">01</span> El pueblito</p>
+        <h2 id="story-title">Un lugar donde el camino importa más que la prisa.</h2>
+      </div>
+      <div class="story-grid">
+        <div class="story-copy" data-reveal>
+          <p class="lead">Senda Pa es un puzzle isométrico de piezas sencillas: rectas y curvas. Colócalas, corrige y pulsa IR. Tu mascota hará el resto.</p>
+          <p>No hay cronómetro, no hay energía y no hay anuncios que interrumpan el paseo. Cada nivel es un trayecto corto; puedes repetirlo tantas veces como quieras.</p>
+          <blockquote class="pullquote">«La única prisa es la de llegar a casa.»</blockquote>
+        </div>
+        <figure class="postcard" data-reveal style="--delay: .1s">
+          <div class="postcard-tape" aria-hidden="true"></div>
+          <img src="assets/features/niveles.webp" width="1000" height="1000" alt="Tablero isométrico del nivel uno, con la mascota y el camino hasta la casita." loading="lazy">
+          <figcaption><span>Nivel 1</span> Primer paso</figcaption>
+          <div class="postcard-stamp" aria-hidden="true">
+            <img src="assets/icon.png" width="64" height="64" alt="" loading="lazy">
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--tight container how" aria-labelledby="how-title">
+      <div class="section-head" data-reveal>
+        <p class="kicker"><span class="kicker-num">02</span> Cómo se juega</p>
+        <h2 id="how-title">Tres pasos. Cero prisa.</h2>
+      </div>
+      <div class="how-grid">
+        <ol class="steps" data-reveal>
+          <li class="step">
+            <span class="step-num">1</span>
+            <div>
+              <h3>Coloca el camino</h3>
+              <p>Elige rectas y curvas. Arrastra el tablero para mirarlo desde otro ángulo.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step-num">2</span>
+            <div>
+              <h3>Pulsa IR</h3>
+              <p>Tu mascota sigue la senda. Si algo no encaja, deshaz y vuelve a probar.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step-num">3</span>
+            <div>
+              <h3>Llega a casa</h3>
+              <p>Abre la casita, gana monedas y suma un amigo a tu colección.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="how-art" data-reveal style="--delay: .1s">
+          <div class="phone phone--how">
+            <div class="phone-screen">
+              <img src="assets/screens/salto.webp" width="860" height="1528" alt="La mascota saltando dentro del nivel isométrico." loading="lazy">
+            </div>
+          </div>
+          <div class="how-note">
+            <svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>
+            <span>No hay penalización por equivocarse.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pueblito" class="section container features" aria-labelledby="features-title">
+      <div class="section-head" data-reveal>
+        <p class="kicker"><span class="kicker-num">03</span> Por dentro</p>
+        <h2 id="features-title">Un pueblito que crece contigo.</h2>
+      </div>
+      <div class="bento">
+        <article class="bento-card bento-card--levels" data-reveal>
+          <img src="assets/features/niveles.webp" width="1000" height="1000" alt="Tablero isométrico verde con el camino, la mascota y la casita." loading="lazy">
+          <div class="bento-copy">
+            <span class="bento-eyebrow">48 niveles</span>
+            <h3>Un paseo para cada rato.</h3>
+            <p>Del primer paso a la granja entera.</p>
+          </div>
+        </article>
+        <article class="bento-card bento-card--pets" data-reveal style="--delay: .06s">
+          <img src="assets/features/amigos.webp" width="1000" height="323" alt="Tres mascotas de la colección: gato, perro y conejo, cada una con un gorro." loading="lazy">
+          <div class="bento-copy">
+            <span class="bento-eyebrow">24 amigos</span>
+            <h3>Gatos, perros y conejos.</h3>
+          </div>
+        </article>
+        <article class="bento-card bento-card--daily" data-reveal style="--delay: .1s">
+          <img src="assets/features/regalo.webp" width="1000" height="296" alt="Tarjeta del regalo diario de 25 monedas." loading="lazy">
+          <div class="bento-copy">
+            <span class="bento-eyebrow">Regalo del día</span>
+            <h3>25 G si pasas hoy.</h3>
+            <p>Sin rachas. Sin obligación.</p>
+          </div>
+        </article>
+        <article class="bento-card bento-card--farm" data-reveal>
+          <img src="assets/features/granja.webp" width="900" height="1260" alt="La granja isométrica con parcelas abiertas, árboles y la casita." loading="lazy">
+          <div class="bento-copy">
+            <span class="bento-eyebrow">La granja</span>
+            <h3>Un terreno cada vez.</h3>
+            <p>Abre parcelas, planta árboles y completa misiones.</p>
+          </div>
+        </article>
+        <article class="bento-card bento-card--hats" data-reveal style="--delay: .06s">
+          <img src="assets/features/gorros.webp" width="900" height="1215" alt="Tienda de gorros con sombreros de distintos estilos." loading="lazy">
+          <div class="bento-copy">
+            <span class="bento-eyebrow">Gorros</span>
+            <h3>Estilo para cada amigo.</h3>
+            <p>Se compran con monedas del juego.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="capturas" class="section section--gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-head section-head--inverse" data-reveal>
+          <p class="kicker"><span class="kicker-num">04</span> Capturas</p>
+          <h2 id="gallery-title">Mira el pueblito por dentro.</h2>
+          <p class="section-sub">Capturas reales de la versión 0.5 en Android.</p>
+        </div>
+        <div class="gallery-controls">
+          <p class="gallery-hint"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg> Desliza o usa las flechas</p>
+          <div class="gallery-buttons">
+            <button class="round-btn" type="button" data-gallery-prev aria-label="Captura anterior"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
+            <button class="round-btn" type="button" data-gallery-next aria-label="Siguiente captura"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-viewport">
+        <div class="gallery-track" data-gallery-track>
+          <a class="shot" href="assets/screens/portada.webp" data-lightbox data-caption="La portada">
+            <div class="phone phone--gallery"><div class="phone-screen"><img src="assets/screens/portada.webp" width="760" height="1689" alt="Pantalla de inicio con el título Senda Pa, el gato y el botón Comenzar." loading="lazy"></div></div>
+            <span class="shot-caption">La portada</span>
+          </a>
+          <a class="shot" href="assets/screens/inicio.webp" data-lightbox data-caption="Tu rincón">
+            <div class="phone phone--gallery"><div class="phone-screen"><img src="assets/screens/inicio.webp" width="760" height="1689" alt="Pantalla principal con el regalo diario y la senda de la granja." loading="lazy"></div></div>
+            <span class="shot-caption">Tu rincón</span>
+          </a>
+          <a class="shot" href="assets/screens/nivel.webp" data-lightbox data-caption="El primer paseo">
+            <div class="phone phone--gallery"><div class="phone-screen"><img src="assets/screens/nivel.webp" width="860" height="1528" alt="Nivel uno del puzzle con el tablero y la mascota." loading="lazy"></div></div>
+            <span class="shot-caption">El primer paseo</span>
+          </a>
+          <a class="shot" href="assets/screens/coleccion.webp" data-lightbox data-caption="La colección">
+            <div class="phone phone--gallery"><div class="phone-screen"><img src="assets/screens/coleccion.webp" width="860" height="1528" alt="Pantalla de la colección con gato, perro y conejo descubiertos." loading="lazy"></div></div>
+            <span class="shot-caption">La colección</span>
+          </a>
+          <a class="shot" href="assets/screens/granja.webp" data-lightbox data-caption="La granja">
+            <div class="phone phone--gallery"><div class="phone-screen"><img src="assets/screens/granja.webp" width="860" height="1528" alt="La granja con parcelas, árboles y camino." loading="lazy"></div></div>
+            <span class="shot-caption">La granja</span>
+          </a>
+          <a class="shot" href="assets/screens/tienda.webp" data-lightbox data-caption="La tienda de gorros">
+            <div class="phone phone--gallery"><div class="phone-screen"><img src="assets/screens/tienda.webp" width="860" height="1528" alt="Tienda de gorros con sombreros y precios en monedas del juego." loading="lazy"></div></div>
+            <span class="shot-caption">La tienda de gorros</span>
+          </a>
+          <a class="shot" href="assets/screens/victoria.webp" data-lightbox data-caption="Vuelta a casa">
+            <div class="phone phone--gallery"><div class="phone-screen"><img src="assets/screens/victoria.webp" width="860" height="1528" alt="Pantalla de victoria al llegar a la casita." loading="lazy"></div></div>
+            <span class="shot-caption">Vuelta a casa</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container wifi" aria-labelledby="wifi-title">
+      <div class="wifi-art" data-reveal>
+        <div class="wifi-halo" aria-hidden="true"></div>
+        <div class="phone phone--wifi phone--back">
+          <div class="phone-screen"><img src="assets/screens/inicio.webp" width="760" height="1689" alt="Pantalla de inicio con el acceso al duelo Wi-Fi." loading="lazy"></div>
+        </div>
+        <div class="phone phone--wifi phone--front">
+          <div class="phone-screen"><img src="assets/screens/nivel.webp" width="860" height="1528" alt="Nivel del puzzle en una partida de dos jugadores." loading="lazy"></div>
+        </div>
+        <div class="wifi-badge"><svg class="icon" aria-hidden="true"><use href="#i-wifi"/></svg><span>2 jugadores</span></div>
+        <svg class="wifi-arcs" viewBox="0 0 420 220" fill="none" aria-hidden="true">
+          <path d="M48 168c62-54 104-58 162-18 52 36 108 32 164-12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 12"/>
+        </svg>
+      </div>
+      <div class="wifi-copy" data-reveal style="--delay: .08s">
+        <p class="kicker"><span class="kicker-num">05</span> Duelo Wi-Fi</p>
+        <h2>Una misma red.<br>Dos sillas.</h2>
+        <p>Dos teléfonos en la misma red local. El anfitrión abre la sala y el invitado la busca; si el router se pone difícil, se puede escribir la IP a mano.</p>
+        <ul class="check-list">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Sin cuentas ni servidores.</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Sin internet para jugar: solo tu Wi-Fi.</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Revancha desde la misma sala.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="promise" aria-labelledby="promise-title">
+      <div class="promise-paw" aria-hidden="true"><svg class="icon icon--fill"><use href="#i-paw"/></svg></div>
+      <div class="container promise-inner" data-reveal>
+        <p class="kicker kicker--light"><span class="kicker-num">06</span> La promesa del pueblito</p>
+        <h2 id="promise-title">Sin anuncios.<br>Sin energía.<br>Sin reloj.</h2>
+        <p>Senda Pa no te pide volver a una hora concreta. El regalo diario está ahí si pasas; si no, no pasa nada. Los gorros se compran con monedas del juego, no con dinero real.</p>
+        <div class="promise-tags">
+          <span>Sin anuncios</span>
+          <span>Sin compras para avanzar</span>
+          <span>Sin rachas</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="disponible" class="section container final" aria-labelledby="final-title">
+      <div class="final-card" data-reveal>
+        <div class="final-copy">
+          <p class="kicker"><span class="kicker-num">07</span> El pueblito abre pronto</p>
+          <h2 id="final-title">Muy pronto en Google Play.</h2>
+          <p>Senda Pa 0.5 está en preparación. Si necesitas la política de privacidad para la ficha de la tienda, ya está publicada aquí.</p>
+          <div class="final-actions">
+            <a class="btn btn--primary" href="privacidad/">Política de privacidad</a>
+            <a class="btn btn--ghost" href="terminos/">Términos de uso</a>
+          </div>
+          <p class="final-meta"><span class="status-dot" aria-hidden="true"></span> Android · Versión 0.5 · Sin anuncios</p>
+        </div>
+        <div class="final-stamp" aria-hidden="true">
+          <img src="assets/icon.png" width="160" height="160" alt="" loading="lazy">
+          <span>Hecho para<br>ir sin prisa</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand--footer" href="./" aria-label="Senda Pa, inicio">
+          <img src="assets/icon.png" width="44" height="44" alt="" loading="lazy">
+          <span class="brand-word">Senda <em>Pa</em></span>
+        </a>
+        <p>El pueblito de los animalitos.<br>Un puzzle para ir sin prisa.</p>
+      </div>
+      <nav class="footer-nav" aria-label="El juego">
+        <h2>El juego</h2>
+        <a href="#juego">Cómo se juega</a>
+        <a href="#pueblito">Lo que encontrarás</a>
+        <a href="#capturas">Capturas</a>
+      </nav>
+      <nav class="footer-nav" aria-label="Legal">
+        <h2>Legal</h2>
+        <a href="privacidad/">Privacidad</a>
+        <a href="terminos/">Términos de uso</a>
+        <a href="mailto:hola@sendapa.app">Contacto</a>
+      </nav>
+      <div class="footer-contact">
+        <h2>Escríbeme</h2>
+        <a href="mailto:hola@sendapa.app">hola@sendapa.app</a>
+        <p>Para dudas sobre el juego, la privacidad o la ficha de Play.</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Senda Pa. Hecho con Godot.</p>
+      <p>Este sitio no usa cookies ni analítica. Google Play es una marca de Google LLC.</p>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-caption">
+    <button class="lightbox-close" type="button" data-lightbox-close aria-label="Cerrar captura">
+      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+    <img alt="" width="860" height="1528">
+    <p id="lightbox-caption"></p>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
